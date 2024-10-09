@@ -15,7 +15,7 @@ const authHeader =
 
 // Configure CORS to allow requests from your frontend URL
 app.use(cors({
-  origin: 'https://realtim-trains-frontend.vercel.app/' // Allow your frontend URL
+  origin: 'https://realtim-trains-frontend.vercel.app' // Allow your frontend URL
 }));
 
 // Existing route for station search
