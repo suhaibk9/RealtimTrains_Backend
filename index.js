@@ -1,6 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const dotenv = require('dotenv');
+const cors = require('cors'); // Import the cors package
 
 dotenv.config();
 
@@ -11,6 +12,11 @@ const password = process.env.USER_PASSWORD;
 
 const authHeader =
   'Basic ' + Buffer.from(`${username}:${password}`).toString('base64');
+
+// Configure CORS to allow requests from your frontend URL
+app.use(cors({
+  origin: 'https://realtim-trains-frontend.vercel.app/' // Allow your frontend URL
+}));
 
 // Existing route for station search
 app.get('/search/:station', async (req, res) => {
