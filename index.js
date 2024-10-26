@@ -17,7 +17,8 @@ const authHeader =
 app.use(cors({
   origin: 'https://realtim-trains-frontend.vercel.app' // Allow your frontend URL
 }));
-
+//Ping Check
+app.get('/ping', (req, res) => res.send('Pong'));
 // Existing route for station search
 app.get('/search/:station', async (req, res) => {
   const station = req.params.station;
